@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: azureexamspringboot 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azureexamspringboot
+  template:
+    metadata:
+      labels:
+        app: azureexamspringboot
+    spec:
+      containers:
+        - name: azureexamspringboot
+          image: acrsindohdev01.azurecr.io/uniqueherbsaltazureexamspringboot:3
+          ports:
+          - containerPort: 8081   
